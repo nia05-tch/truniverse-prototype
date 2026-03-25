@@ -1,392 +1,889 @@
-{
-  "hotels": [
-    {
-      "id": "hotel-001",
-      "name": "Hotel & Eatery West",
-      "slug": "hotel-eatery-west",
-      "location": {
-        "address": "Baarsjesweg 24",
-        "neighborhood": "Amsterdam West",
-        "city": "Amsterdam",
-        "country": "Netherlands",
-        "latitude": 52.3676,
-        "longitude": 4.8520
-      },
-      "images": {
-        "main": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600",
-        "gallery": [
-          "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
-          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
-          "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800"
-        ]
-      },
-      "rating": {
-        "score": 9.2,
-        "label": "Exceptional",
-        "reviews_count": 342
-      },
-      "price": {
-        "from": 145,
-        "currency": "EUR",
-        "per": "night"
-      },
-      "vibe_tags": ["creative", "romantic"],
-      "amenity_tags": ["breakfast", "workspace"],
-      "transport_tags": ["tram"],
-      "display_tags": ["Creative Hub", "Workspace", "Local Vibe"],
-      "verified_info": {
-        "parking": {
-          "available": true,
-          "type": "street",
-          "on_site": false,
-          "distance_m": 50,
-          "cost_per_hour": 4.00,
-          "cost_per_day": null,
-          "notes": "Street parking only"
-        },
-        "breakfast": {
-          "available": true,
-          "included": false,
-          "cost": 18,
-          "type": "Full breakfast"
-        },
-        "wifi": {
-          "available": true,
-          "free": true,
-          "speed": "Fast (100+ Mbps)"
-        },
-        "check_in": "15:00",
-        "check_out": "11:00"
-      },
-      "description": {
-        "short": "A creative hub in the heart of Amsterdam West, perfect for digital nomads and design lovers.",
-        "long": "Hotel & Eatery West combines industrial-chic design with warm hospitality. The ground-floor restaurant serves locally-sourced meals, while upstairs rooms feature curated art and dedicated workspaces. Located steps from the trendy Baarsjes neighborhood, you're surrounded by independent coffee shops, vintage stores, and authentic local life."
-      },
-      "best_for": ["Digital nomads", "Couples", "Design enthusiasts"],
-      "direct_booking_url": "https://hotelandeaterywest.com/book",
-      "verified": true,
-      "last_verified": "2026-03-20"
-    },
-    {
-      "id": "hotel-002",
-      "name": "The Westerpark Inn",
-      "slug": "westerpark-inn",
-      "location": {
-        "address": "Haarlemmerweg 88",
-        "neighborhood": "Near Westerpark",
-        "city": "Amsterdam",
-        "country": "Netherlands",
-        "latitude": 52.3864,
-        "longitude": 4.8765
-      },
-      "images": {
-        "main": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600",
-        "gallery": [
-          "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
-          "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800",
-          "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
-        ]
-      },
-      "rating": {
-        "score": 9.5,
-        "label": "Outstanding",
-        "reviews_count": 218
-      },
-      "price": {
-        "from": 189,
-        "currency": "EUR",
-        "per": "night"
-      },
-      "vibe_tags": ["quiet", "romantic"],
-      "amenity_tags": ["parking", "breakfast"],
-      "transport_tags": ["tram", "metro"],
-      "display_tags": ["Quiet Retreat", "Garden View", "Romantic"],
-      "verified_info": {
-        "parking": {
-          "available": true,
-          "type": "private",
-          "on_site": true,
-          "distance_m": 0,
-          "cost_per_hour": null,
-          "cost_per_day": 25.00,
-          "notes": "Private garage, reservation recommended"
-        },
-        "breakfast": {
-          "available": true,
-          "included": true,
-          "cost": 0,
-          "type": "Organic buffet"
-        },
-        "wifi": {
-          "available": true,
-          "free": true,
-          "speed": "Fast (100+ Mbps)"
-        },
-        "check_in": "14:00",
-        "check_out": "12:00"
-      },
-      "description": {
-        "short": "A peaceful oasis overlooking Westerpark, where nature meets boutique luxury.",
-        "long": "The Westerpark Inn offers a rare combination: boutique elegance with direct access to Amsterdam's beloved Westerpark. Wake up to garden views, enjoy organic breakfast in our greenhouse restaurant, and step directly into 50 hectares of parkland. The nearby Westergasfabriek hosts cultural events, markets, and excellent restaurants. Perfect for those seeking tranquility without sacrificing connectivity."
-      },
-      "best_for": ["Couples", "Nature lovers", "Relaxation seekers"],
-      "direct_booking_url": "https://westerparkinn.nl/reservations",
-      "verified": true,
-      "last_verified": "2026-03-18"
-    },
-    {
-      "id": "hotel-003",
-      "name": "Casa Amsterdam",
-      "slug": "casa-amsterdam",
-      "location": {
-        "address": "De Clercqstraat 56",
-        "neighborhood": "Oud-West",
-        "city": "Amsterdam",
-        "country": "Netherlands",
-        "latitude": 52.3731,
-        "longitude": 4.8673
-      },
-      "images": {
-        "main": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600",
-        "gallery": [
-          "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
-          "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
-          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800"
-        ]
-      },
-      "rating": {
-        "score": 8.8,
-        "label": "Excellent",
-        "reviews_count": 456
-      },
-      "price": {
-        "from": 128,
-        "currency": "EUR",
-        "per": "night"
-      },
-      "vibe_tags": ["family"],
-      "amenity_tags": ["parking", "breakfast", "pets"],
-      "transport_tags": ["tram"],
-      "display_tags": ["Family Suites", "Pet-Friendly", "Breakfast"],
-      "verified_info": {
-        "parking": {
-          "available": true,
-          "type": "public",
-          "on_site": false,
-          "distance_m": 180,
-          "cost_per_hour": 3.50,
-          "cost_per_day": 35.00,
-          "notes": "Public lot Q-Park De Clercqstraat, 3 min walk"
-        },
-        "breakfast": {
-          "available": true,
-          "included": true,
-          "cost": 0,
-          "type": "Family-style buffet"
-        },
-        "wifi": {
-          "available": true,
-          "free": true,
-          "speed": "Standard (50 Mbps)"
-        },
-        "check_in": "15:00",
-        "check_out": "11:00"
-      },
-      "description": {
-        "short": "A warm, family-run hotel where kids and pets are genuinely welcome.",
-        "long": "Casa Amsterdam breaks the mold of 'adults-only' boutique hotels. Our family suites feature separate sleeping areas, kid-friendly amenities, and a relaxed atmosphere where children can be children. The on-site restaurant offers a dedicated kids menu with healthy options, and our staff genuinely loves helping families explore Amsterdam. Dogs are welcome too — we provide beds, bowls, and local walking route maps."
-      },
-      "best_for": ["Families with children", "Pet owners", "Multi-generational trips"],
-      "family_friendly": {
-        "score": 9,
-        "family_rooms": true,
-        "cribs_available": true,
-        "kids_menu": true,
-        "babysitting": true,
-        "play_area": false
-      },
-      "pet_policy": {
-        "allowed": true,
-        "fee_per_night": 15,
-        "max_weight_kg": 25,
-        "notes": "Dogs welcome, cats by request"
-      },
-      "direct_booking_url": "https://casa-amsterdam.com/book",
-      "verified": true,
-      "last_verified": "2026-03-22"
-    },
-    {
-      "id": "hotel-004",
-      "name": "The Loft Studios",
-      "slug": "loft-studios",
-      "location": {
-        "address": "Bilderdijkstraat 132",
-        "neighborhood": "Amsterdam West",
-        "city": "Amsterdam",
-        "country": "Netherlands",
-        "latitude": 52.3698,
-        "longitude": 4.8612
-      },
-      "images": {
-        "main": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600",
-        "gallery": [
-          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
-          "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
-          "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800"
-        ]
-      },
-      "rating": {
-        "score": 9.0,
-        "label": "Superb",
-        "reviews_count": 189
-      },
-      "price": {
-        "from": 165,
-        "currency": "EUR",
-        "per": "night"
-      },
-      "vibe_tags": ["creative"],
-      "amenity_tags": ["workspace", "breakfast"],
-      "transport_tags": ["metro"],
-      "display_tags": ["Design Hotel", "Coworking", "Rooftop Bar"],
-      "verified_info": {
-        "parking": {
-          "available": false,
-          "type": null,
-          "on_site": false,
-          "distance_m": null,
-          "cost_per_hour": null,
-          "cost_per_day": null,
-          "notes": "No on-site parking. P+R Sloterdijk recommended (€8/day + free metro)"
-        },
-        "breakfast": {
-          "available": true,
-          "included": false,
-          "cost": 22,
-          "type": "À la carte"
-        },
-        "wifi": {
-          "available": true,
-          "free": true,
-          "speed": "Ultra-fast (300+ Mbps)"
-        },
-        "check_in": "16:00",
-        "check_out": "11:00"
-      },
-      "description": {
-        "short": "Industrial-chic studios with a rooftop bar and serious coworking space.",
-        "long": "The Loft Studios is where design meets productivity. Each loft-style room features high ceilings, exposed brick, and a dedicated work area with ergonomic seating. The ground-floor coworking space is free for guests and includes meeting rooms bookable by the hour. End your day at the rooftop bar with panoramic views over Amsterdam West. A favorite among architects, designers, and creative entrepreneurs."
-      },
-      "best_for": ["Business travelers", "Creative professionals", "Solo travelers"],
-      "workspace_info": {
-        "in_room_desk": true,
-        "coworking_space": true,
-        "meeting_rooms": true,
-        "meeting_room_cost_per_hour": 30,
-        "printer_available": true
-      },
-      "direct_booking_url": "https://theloftstudios.nl/book",
-      "verified": true,
-      "last_verified": "2026-03-19"
-    },
-    {
-      "id": "hotel-005",
-      "name": "Canal House West",
-      "slug": "canal-house-west",
-      "location": {
-        "address": "Nassaukade 387",
-        "neighborhood": "Canal District West",
-        "city": "Amsterdam",
-        "country": "Netherlands",
-        "latitude": 52.3745,
-        "longitude": 4.8789
-      },
-      "images": {
-        "main": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600",
-        "gallery": [
-          "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800",
-          "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
-          "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
-        ]
-      },
-      "rating": {
-        "score": 9.4,
-        "label": "Outstanding",
-        "reviews_count": 276
-      },
-      "price": {
-        "from": 210,
-        "currency": "EUR",
-        "per": "night"
-      },
-      "vibe_tags": ["romantic", "quiet"],
-      "amenity_tags": ["breakfast"],
-      "transport_tags": ["tram"],
-      "display_tags": ["Historic", "Canal View", "Intimate"],
-      "verified_info": {
-        "parking": {
-          "available": true,
-          "type": "permit",
-          "on_site": false,
-          "distance_m": 100,
-          "cost_per_hour": null,
-          "cost_per_day": 45.00,
-          "notes": "Permit zone. Hotel assists with booking visitor permit (€45/day)"
-        },
-        "breakfast": {
-          "available": true,
-          "included": true,
-          "cost": 0,
-          "type": "Champagne breakfast"
-        },
-        "wifi": {
-          "available": true,
-          "free": true,
-          "speed": "Fast (100+ Mbps)"
-        },
-        "check_in": "15:00",
-        "check_out": "12:00"
-      },
-      "description": {
-        "short": "A restored 17th-century canal house offering timeless Amsterdam romance.",
-        "long": "Canal House West occupies a meticulously restored monument from 1658. Original features — steep staircases, ornate ceiling plasterwork, canal-facing windows — blend with modern comforts. Each of our 12 rooms is unique, named after historical figures who shaped this neighborhood. Breakfast is served in the candlelit parlor overlooking the water. An intimate, unforgettable Amsterdam experience."
-      },
-      "best_for": ["Couples", "Anniversary trips", "History enthusiasts"],
-      "special_features": [
-        "17th-century monument",
-        "Original period features",
-        "Only 12 rooms",
-        "Canal-facing rooms available"
-      ],
-      "direct_booking_url": "https://canalhousewest.com/reservations",
-      "verified": true,
-      "last_verified": "2026-03-21"
-    }
-  ],
-  "filters": {
-    "vibe": [
-      {"value": "romantic", "label": "Romantic"},
-      {"value": "creative", "label": "Creative & Artsy"},
-      {"value": "quiet", "label": "Quiet Retreat"},
-      {"value": "family", "label": "Family-Friendly"}
-    ],
-    "amenities": [
-      {"value": "parking", "label": "Parking"},
-      {"value": "breakfast", "label": "Breakfast Included"},
-      {"value": "workspace", "label": "Workspace"},
-      {"value": "pets", "label": "Pet-Friendly"}
-    ],
-    "transport": [
-      {"value": "tram", "label": "Near Tram (< 5 min)"},
-      {"value": "metro", "label": "Near Metro"}
-    ]
-  },
-  "metadata": {
-    "version": "1.0",
-    "last_updated": "2026-03-25",
-    "total_hotels": 5,
-    "city": "Amsterdam",
-    "area": "West",
-    "notes": "Prototype data for Truniverse MVP pilot. Replace with real hotel data for production."
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel & Eatery West — Truniverse</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            background: #080810;
+            color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        /* =============================================
+           BACKGROUND
+           ============================================= */
+        .space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('space.jpg') center center / cover no-repeat;
+            z-index: 0;
+        }
+
+        .space-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(8, 8, 16, 0.75) 0%, rgba(8, 8, 16, 0.95) 100%);
+            z-index: 1;
+        }
+
+        /* =============================================
+           HEADER
+           ============================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 16, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(244, 162, 97, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-diamond {
+            width: 28px;
+            height: 28px;
+            filter: drop-shadow(0 0 10px rgba(255, 232, 163, 0.5));
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #f4a261;
+        }
+
+        .back-link {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            color: #f8f9fa;
+            text-decoration: none;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            color: #f4a261;
+        }
+
+        /* =============================================
+           MAIN CONTENT
+           ============================================= */
+        .main-content {
+            position: relative;
+            z-index: 50;
+            padding-top: 100px;
+        }
+
+        /* =============================================
+           HERO IMAGE
+           ============================================= */
+        .hero-image {
+            width: 100%;
+            height: 450px;
+            background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200') center center / cover no-repeat;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, #080810 0%, transparent 100%);
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: rgba(244, 162, 97, 0.95);
+            color: #080810;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-badge::before {
+            content: "✓";
+            font-weight: bold;
+        }
+
+        /* =============================================
+           HOTEL INFO CONTAINER
+           ============================================= */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px 80px;
+        }
+
+        /* =============================================
+           HOTEL HEADER
+           ============================================= */
+        .hotel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            margin-top: -60px;
+            position: relative;
+        }
+
+        .hotel-title-section {
+            flex: 1;
+        }
+
+        .hotel-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 300;
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .hotel-location {
+            font-size: 1rem;
+            opacity: 0.5;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hotel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hotel-tag {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            background: rgba(244, 162, 97, 0.1);
+            border: 1px solid rgba(244, 162, 97, 0.2);
+            border-radius: 20px;
+            color: #f4a261;
+        }
+
+        /* BOOKING BOX */
+        .booking-box {
+            background: rgba(28, 28, 52, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(244, 162, 97, 0.15);
+            min-width: 320px;
+            text-align: center;
+        }
+
+        .rating-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .rating-score-large {
+            background: #f4a261;
+            color: #080810;
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 15px 20px;
+            border-radius: 12px;
+        }
+
+        .rating-details {
+            text-align: left;
+        }
+
+        .rating-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 3px;
+        }
+
+        .rating-count {
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        .price-large {
+            margin-bottom: 25px;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .price-amount-large {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: #f4a261;
+        }
+
+        .price-amount-large span {
+            font-size: 1.2rem;
+            opacity: 0.6;
+            color: #f8f9fa;
+        }
+
+        .book-direct-btn-large {
+            width: 100%;
+            padding: 20px 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #f4a261 0%, #e07a5f 100%);
+            color: #080810;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-bottom: 15px;
+        }
+
+        .book-direct-btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(244, 162, 97, 0.4);
+            letter-spacing: 6px;
+        }
+
+        .direct-note {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            font-style: italic;
+        }
+
+        /* =============================================
+           CONTENT GRID
+           ============================================= */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .content-card {
+            background: rgba(28, 28, 52, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(244, 162, 97, 0.1);
+        }
+
+        .content-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #f4a261;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* =============================================
+           VERIFIED INFO (THE HONEST TRUTH)
+           ============================================= */
+        .verified-section {
+            background: rgba(74, 222, 128, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+        }
+
+        .card-title.verified {
+            color: #4ade80;
+        }
+
+        .verified-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .verified-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .verified-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(74, 222, 128, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .verified-content h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .verified-content p {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            line-height: 1.5;
+        }
+
+        .verified-content .highlight {
+            color: #4ade80;
+            opacity: 1;
+            font-weight: 400;
+        }
+
+        /* =============================================
+           DESCRIPTION
+           ============================================= */
+        .description-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .description-text p {
+            margin-bottom: 20px;
+        }
+
+        .description-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =============================================
+           BEST FOR
+           ============================================= */
+        .best-for-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .best-for-item {
+            font-size: 0.85rem;
+            padding: 10px 18px;
+            background: rgba(244, 162, 97, 0.1);
+            border: 1px solid rgba(244, 162, 97, 0.2);
+            border-radius: 25px;
+            color: #f4a261;
+        }
+
+        /* =============================================
+           AMENITIES
+           ============================================= */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .amenity-icon {
+            font-size: 1.1rem;
+        }
+
+        /* =============================================
+           GALLERY
+           ============================================= */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* =============================================
+           NEIGHBORHOOD
+           ============================================= */
+        .neighborhood-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+
+        .nearby-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nearby-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        .nearby-item .distance {
+            color: #f4a261;
+            opacity: 1;
+        }
+
+        /* =============================================
+           POLICIES
+           ============================================= */
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .policy-item {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .policy-label {
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        .policy-value {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* =============================================
+           BOTTOM CTA
+           ============================================= */
+        .bottom-cta {
+            background: rgba(244, 162, 97, 0.1);
+            border: 1px solid rgba(244, 162, 97, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .bottom-cta h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .bottom-cta h3 em {
+            color: #f4a261;
+            font-style: italic;
+        }
+
+        .bottom-cta p {
+            font-size: 1rem;
+            opacity: 0.6;
+            margin-bottom: 30px;
+        }
+
+        .bottom-cta .book-direct-btn-large {
+            width: auto;
+            padding: 20px 60px;
+        }
+
+        /* =============================================
+           RESPONSIVE
+           ============================================= */
+        @media (max-width: 900px) {
+            .hotel-header {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .booking-box {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .verified-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hotel-name {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .policies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="space-bg"></div>
+    <div class="space-overlay"></div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="diamond.jpg" alt="Diamond" class="logo-diamond">
+            <span class="logo-text">Truniverse</span>
+        </a>
+
+        <a href="search.html" class="back-link">
+            ← Back to results
+        </a>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- HERO IMAGE -->
+        <div class="hero-image">
+            <span class="hero-badge">Truniverse Verified</span>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container">
+
+            <!-- HOTEL HEADER -->
+            <div class="hotel-header">
+                <div class="hotel-title-section">
+                    <h1 class="hotel-name">Hotel & Eatery West</h1>
+                    <p class="hotel-location">
+                        <span>📍</span> Baarsjesweg 24 · Amsterdam West
+                    </p>
+                    <div class="hotel-tags">
+                        <span class="hotel-tag">Creative Hub</span>
+                        <span class="hotel-tag">Workspace</span>
+                        <span class="hotel-tag">Local Vibe</span>
+                        <span class="hotel-tag">Romantic</span>
+                    </div>
+                </div>
+
+                <!-- BOOKING BOX -->
+                <div class="booking-box">
+                    <div class="rating-large">
+                        <span class="rating-score-large">9.2</span>
+                        <div class="rating-details">
+                            <p class="rating-label">Exceptional</p>
+                            <p class="rating-count">342 verified reviews</p>
+                        </div>
+                    </div>
+                    <div class="price-large">
+                        <p class="price-label">From</p>
+                        <p class="price-amount-large">€145 <span>/ night</span></p>
+                    </div>
+                    <button class="book-direct-btn-large" onclick="window.open('https://hotelandeaterywest.com/book', '_blank')">
+                        Book Direct
+                    </button>
+                    <p class="direct-note">You'll book directly on the hotel's website</p>
+                </div>
+            </div>
+
+            <!-- =============================================
+                 VERIFIED INFO — THE HONEST TRUTH
+                 ============================================= -->
+            <div class="content-card full-width verified-section">
+                <h3 class="card-title verified">✓ Verified Information — The Honest Truth</h3>
+                <div class="verified-grid">
+                    <div class="verified-item">
+                        <div class="verified-icon">🚗</div>
+                        <div class="verified-content">
+                            <h4>Parking</h4>
+                            <p><span class="highlight">Street parking only</span> — €4.00/hour. Nearest spot typically 50m walk. No private garage. Consider P+R if driving.</p>
+                        </div>
+                    </div>
+                    <div class="verified-item">
+                        <div class="verified-icon">🥐</div>
+                        <div class="verified-content">
+                            <h4>Breakfast</h4>
+                            <p><span class="highlight">Available but not included</span> — €18/person. Full breakfast served in ground-floor restaurant, 7:30-10:30am.</p>
+                        </div>
+                    </div>
+                    <div class="verified-item">
+                        <div class="verified-icon">📶</div>
+                        <div class="verified-content">
+                            <h4>WiFi</h4>
+                            <p><span class="highlight">Fast & free</span> — 100+ Mbps throughout hotel. Suitable for video calls and remote work.</p>
+                        </div>
+                    </div>
+                    <div class="verified-item">
+                        <div class="verified-icon">🚊</div>
+                        <div class="verified-content">
+                            <h4>Transport</h4>
+                            <p><span class="highlight">Tram 7 & 13</span> — Stop "Baarsjesweg" is 2 min walk. Direct connection to Central Station (12 min).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTENT GRID -->
+            <div class="content-grid">
+
+                <!-- DESCRIPTION -->
+                <div class="content-card">
+                    <h3 class="card-title">✦ About This Hotel</h3>
+                    <div class="description-text">
+                        <p>Hotel & Eatery West combines industrial-chic design with warm hospitality. The ground-floor restaurant serves locally-sourced meals, while upstairs rooms feature curated art and dedicated workspaces.</p>
+                        <p>Located steps from the trendy Baarsjes neighborhood, you're surrounded by independent coffee shops, vintage stores, and authentic local life.</p>
+                    </div>
+                </div>
+
+                <!-- BEST FOR -->
+                <div class="content-card">
+                    <h3 class="card-title">✦ Best For</h3>
+                    <div class="best-for-list">
+                        <span class="best-for-item">Digital nomads</span>
+                        <span class="best-for-item">Couples</span>
+                        <span class="best-for-item">Design enthusiasts</span>
+                        <span class="best-for-item">Remote workers</span>
+                        <span class="best-for-item">Foodies</span>
+                    </div>
+                </div>
+
+                <!-- AMENITIES -->
+                <div class="content-card">
+                    <h3 class="card-title">✦ Amenities</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <span class="amenity-icon">📶</span>
+                            <span>Fast WiFi</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">💻</span>
+                            <span>In-room workspace</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🍽️</span>
+                            <span>Restaurant</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">☕</span>
+                            <span>Coffee maker</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">❄️</span>
+                            <span>Air conditioning</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🔒</span>
+                            <span>Safe</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">👔</span>
+                            <span>Ironing</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">🧴</span>
+                            <span>Luxury toiletries</span>
+                        </div>
+                        <div class="amenity-item">
+                            <span class="amenity-icon">📺</span>
+                            <span>Smart TV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEIGHBORHOOD -->
+                <div class="content-card">
+                    <h3 class="card-title">✦ The Neighborhood</h3>
+                    <p class="neighborhood-text">
+                        Amsterdam West is where locals actually live. Skip the tourist traps and discover the city's creative heart — full of independent cafes, galleries, and some of the best food in the city.
+                    </p>
+                    <div class="nearby-list">
+                        <div class="nearby-item">
+                            <span>☕ Lot Sixty One Coffee</span>
+                            <span class="distance">3 min</span>
+                        </div>
+                        <div class="nearby-item">
+                            <span>🍜 Fou Fow Ramen</span>
+                            <span class="distance">5 min</span>
+                        </div>
+                        <div class="nearby-item">
+                            <span>🌳 Westerpark</span>
+                            <span class="distance">10 min</span>
+                        </div>
+                        <div class="nearby-item">
+                            <span>🏛️ Rijksmuseum</span>
+                            <span class="distance">15 min tram</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALLERY -->
+                <div class="content-card full-width">
+                    <h3 class="card-title">✦ Gallery</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600');"></div>
+                        <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600');"></div>
+                    </div>
+                </div>
+
+                <!-- POLICIES -->
+                <div class="content-card full-width">
+                    <h3 class="card-title">✦ Policies</h3>
+                    <div class="policies-grid">
+                        <div class="policy-item">
+                            <span class="policy-label">Check-in</span>
+                            <span class="policy-value">From 15:00</span>
+                        </div>
+                        <div class="policy-item">
+                            <span class="policy-label">Check-out</span>
+                            <span class="policy-value">Until 11:00</span>
+                        </div>
+                        <div class="policy-item">
+                            <span class="policy-label">Cancellation</span>
+                            <span class="policy-value">Free until 48h before</span>
+                        </div>
+                        <div class="policy-item">
+                            <span class="policy-label">Children</span>
+                            <span class="policy-value">Welcome (cribs available)</span>
+                        </div>
+                        <div class="policy-item">
+                            <span class="policy-label">Pets</span>
+                            <span class="policy-value">Not allowed</span>
+                        </div>
+                        <div class="policy-item">
+                            <span class="policy-label">Smoking</span>
+                            <span class="policy-value">Non-smoking property</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM CTA -->
+            <div class="bottom-cta">
+                <h3>Ready to book <em>directly?</em></h3>
+                <p>Skip the middleman. 100% of your payment goes to the hotel.</p>
+                <button class="book-direct-btn-large" onclick="window.open('https://hotelandeaterywest.com/book', '_blank')">
+                    Book Direct — Best Price Guaranteed
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
