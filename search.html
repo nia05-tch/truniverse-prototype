@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truniverse — Discover Your Stay</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            background: #080810;
+            color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        /* =============================================
+           BACKGROUND
+           ============================================= */
+        .space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('pics/space.jpg') center center / cover no-repeat;
+            z-index: 0;
+        }
+
+        .space-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(8, 8, 16, 0.7) 0%, rgba(8, 8, 16, 0.95) 100%);
+            z-index: 1;
+        }
+
+        /* =============================================
+           HEADER / NAV
+           ============================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 8, 16, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(244, 162, 97, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-diamond {
+            width: 28px;
+            height: 28px;
+            filter: drop-shadow(0 0 10px rgba(255, 232, 163, 0.5));
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #f4a261;
+        }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 40px;
+        }
+
+        .header-search input {
+            flex: 1;
+            padding: 14px 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-style: italic;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            background: rgba(20, 20, 40, 0.8);
+            color: #f8f9fa;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .header-search input:focus {
+            border-color: #f4a261;
+        }
+
+        .header-search input::placeholder {
+            color: rgba(248, 249, 250, 0.4);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #f8f9fa;
+            text-decoration: none;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: #f4a261;
+        }
+
+        /* =============================================
+           MAIN CONTENT
+           ============================================= */
+        .main-content {
+            position: relative;
+            z-index: 50;
+            padding-top: 120px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 25px;
+        }
+
+        /* =============================================
+           SEARCH RESULTS HEADER
+           ============================================= */
+        .results-header {
+            margin-bottom: 40px;
+        }
+
+        .results-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .results-header h1 em {
+            color: #f4a261;
+            font-style: italic;
+        }
+
+        .results-count {
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+
+        /* =============================================
+           LAYOUT: FILTERS + CARDS
+           ============================================= */
+        .search-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+        }
+
+        /* =============================================
+           FILTERS SIDEBAR
+           ============================================= */
+        .filters {
+            background: rgba(28, 28, 52, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(244, 162, 97, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 140px;
+        }
+
+        .filters-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #f4a261;
+            margin-bottom: 30px;
+        }
+
+        .filter-group {
+            margin-bottom: 30px;
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-option:hover {
+            color: #f4a261;
+        }
+
+        .filter-option input[type="checkbox"] {
+            display: none;
+        }
+
+        .filter-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 0.7rem;
+        }
+
+        .filter-option input:checked + .filter-checkbox {
+            background: #f4a261;
+            border-color: #f4a261;
+            color: #080810;
+        }
+
+        .filter-option span:last-child {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .clear-filters {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid rgba(244, 162, 97, 0.3);
+            border-radius: 10px;
+            background: transparent;
+            color: #f4a261;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clear-filters:hover {
+            background: rgba(244, 162, 97, 0.1);
+        }
+
+        /* =============================================
+           HOTEL CARDS
+           ============================================= */
+        .hotels-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .hotel-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            background: rgba(28, 28, 52, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(244, 162, 97, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(244, 162, 97, 0.3);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .hotel-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hotel-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(244, 162, 97, 0.9);
+            color: #080810;
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            border-radius: 8px;
+        }
+
+        .hotel-info {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hotel-top {
+            margin-bottom: 20px;
+        }
+
+        .hotel-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .hotel-location {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            margin-bottom: 15px;
+        }
+
+        .hotel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hotel-tag {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            background: rgba(244, 162, 97, 0.1);
+            border: 1px solid rgba(244, 162, 97, 0.2);
+            border-radius: 20px;
+            color: #f4a261;
+        }
+
+        .hotel-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .hotel-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rating-score {
+            background: #f4a261;
+            color: #080810;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .rating-text {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .hotel-price {
+            text-align: right;
+        }
+
+        .price-label {
+            font-size: 0.7rem;
+            opacity: 0.5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .price-amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #f4a261;
+        }
+
+        .price-amount span {
+            font-size: 1rem;
+            opacity: 0.6;
+            color: #f8f9fa;
+        }
+
+        .book-direct-btn {
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f4a261 0%, #e07a5f 100%);
+            color: #080810;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .book-direct-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+        }
+
+        /* =============================================
+           VERIFIED BADGE
+           ============================================= */
+        .verified-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: #4ade80;
+            opacity: 0.8;
+        }
+
+        .verified-info::before {
+            content: "✓";
+            font-weight: bold;
+        }
+
+        /* =============================================
+           RESPONSIVE
+           ============================================= */
+        @media (max-width: 1000px) {
+            .search-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                position: static;
+            }
+
+            .hotel-card {
+                grid-template-columns: 1fr;
+            }
+
+            .hotel-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .header-search {
+                margin: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .main-content {
+                padding-top: 180px;
+            }
+
+            .results-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="space-bg"></div>
+    <div class="space-overlay"></div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">
+            <img src="pics/diamond.jpg" alt="Diamond" class="logo-diamond">
+            <span class="logo-text">Truniverse</span>
+        </a>
+
+        <div class="header-search">
+            <input type="text" placeholder="Boutique in Amsterdam West, family-friendly...">
+        </div>
+
+        <nav class="nav-links">
+            <a href="#">How It Works</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container">
+
+            <!-- RESULTS HEADER -->
+            <div class="results-header">
+                <h1>Boutique hotels in <em>Amsterdam West</em></h1>
+                <p class="results-count">5 verified properties found</p>
+            </div>
+
+            <!-- LAYOUT -->
+            <div class="search-layout">
+
+                <!-- FILTERS SIDEBAR -->
+                <aside class="filters">
+                    <p class="filters-title">✦ Refine Results</p>
+
+                    <!-- VIBE -->
+                    <div class="filter-group">
+                        <label class="filter-label">Vibe</label>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="vibe" value="romantic">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Romantic</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="vibe" value="creative">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Creative & Artsy</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="vibe" value="quiet">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Quiet Retreat</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="vibe" value="family">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Family-Friendly</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- AMENITIES -->
+                    <div class="filter-group">
+                        <label class="filter-label">Amenities</label>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="amenity" value="parking">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Parking</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="amenity" value="breakfast">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Breakfast Included</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="amenity" value="workspace">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Workspace</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="amenity" value="pets">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Pet-Friendly</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- TRANSPORT -->
+                    <div class="filter-group">
+                        <label class="filter-label">Transport</label>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="transport" value="tram">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Near Tram (< 5 min)</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" data-filter="transport" value="metro">
+                                <span class="filter-checkbox">✓</span>
+                                <span>Near Metro</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="clear-filters">Clear All Filters</button>
+                </aside>
+
+                <!-- HOTEL CARDS -->
+                <div class="hotels-grid">
+
+                    <!-- HOTEL 1 -->
+                    <div class="hotel-card" data-vibe="creative romantic" data-amenity="breakfast workspace" data-transport="tram" onclick="window.location.href='hotel.html'">
+                        <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600');">
+                            <span class="hotel-badge">Verified</span>
+                        </div>
+                        <div class="hotel-info">
+                            <div class="hotel-top">
+                                <h3 class="hotel-name">Hotel & Eatery West</h3>
+                                <p class="hotel-location">Baarsjesweg · Amsterdam West</p>
+                                <div class="hotel-tags">
+                                    <span class="hotel-tag">Creative Hub</span>
+                                    <span class="hotel-tag">Workspace</span>
+                                    <span class="hotel-tag">Local Vibe</span>
+                                </div>
+                                <p class="verified-info">Parking: Street only (€4/hr) — 50m walk</p>
+                            </div>
+                            <div class="hotel-bottom">
+                                <div class="hotel-rating">
+                                    <span class="rating-score">9.2</span>
+                                    <span class="rating-text">Exceptional</span>
+                                </div>
+                                <div class="hotel-price">
+                                    <p class="price-label">From</p>
+                                    <p class="price-amount">€145 <span>/ night</span></p>
+                                    <button class="book-direct-btn">Book Direct</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOTEL 2 -->
+                    <div class="hotel-card" data-vibe="quiet romantic" data-amenity="parking breakfast" data-transport="tram metro" onclick="window.location.href='hotel.html'">
+                        <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600');">
+                            <span class="hotel-badge">Verified</span>
+                        </div>
+                        <div class="hotel-info">
+                            <div class="hotel-top">
+                                <h3 class="hotel-name">The Westerpark Inn</h3>
+                                <p class="hotel-location">Haarlemmerweg · Near Westerpark</p>
+                                <div class="hotel-tags">
+                                    <span class="hotel-tag">Quiet Retreat</span>
+                                    <span class="hotel-tag">Garden View</span>
+                                    <span class="hotel-tag">Romantic</span>
+                                </div>
+                                <p class="verified-info">Parking: Private garage (€25/day) — On-site</p>
+                            </div>
+                            <div class="hotel-bottom">
+                                <div class="hotel-rating">
+                                    <span class="rating-score">9.5</span>
+                                    <span class="rating-text">Outstanding</span>
+                                </div>
+                                <div class="hotel-price">
+                                    <p class="price-label">From</p>
+                                    <p class="price-amount">€189 <span>/ night</span></p>
+                                    <button class="book-direct-btn">Book Direct</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOTEL 3 -->
+                    <div class="hotel-card" data-vibe="family" data-amenity="parking breakfast pets" data-transport="tram" onclick="window.location.href='hotel.html'">
+                        <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600');">
+                            <span class="hotel-badge">Verified</span>
+                        </div>
+                        <div class="hotel-info">
+                            <div class="hotel-top">
+                                <h3 class="hotel-name">Casa Amsterdam</h3>
+                                <p class="hotel-location">De Clercqstraat · Oud-West</p>
+                                <div class="hotel-tags">
+                                    <span class="hotel-tag">Family Suites</span>
+                                    <span class="hotel-tag">Pet-Friendly</span>
+                                    <span class="hotel-tag">Breakfast</span>
+                                </div>
+                                <p class="verified-info">Parking: Public lot (€3.50/hr) — 3 min walk</p>
+                            </div>
+                            <div class="hotel-bottom">
+                                <div class="hotel-rating">
+                                    <span class="rating-score">8.8</span>
+                                    <span class="rating-text">Excellent</span>
+                                </div>
+                                <div class="hotel-price">
+                                    <p class="price-label">From</p>
+                                    <p class="price-amount">€128 <span>/ night</span></p>
+                                    <button class="book-direct-btn">Book Direct</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOTEL 4 -->
+                    <div class="hotel-card" data-vibe="creative" data-amenity="workspace breakfast" data-transport="metro" onclick="window.location.href='hotel.html'">
+                        <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600');">
+                            <span class="hotel-badge">Verified</span>
+                        </div>
+                        <div class="hotel-info">
+                            <div class="hotel-top">
+                                <h3 class="hotel-name">The Loft Studios</h3>
+                                <p class="hotel-location">Bilderdijkstraat · Amsterdam West</p>
+                                <div class="hotel-tags">
+                                    <span class="hotel-tag">Design Hotel</span>
+                                    <span class="hotel-tag">Coworking</span>
+                                    <span class="hotel-tag">Rooftop Bar</span>
+                                </div>
+                                <p class="verified-info">Parking: No on-site — Public P+R recommended</p>
+                            </div>
+                            <div class="hotel-bottom">
+                                <div class="hotel-rating">
+                                    <span class="rating-score">9.0</span>
+                                    <span class="rating-text">Superb</span>
+                                </div>
+                                <div class="hotel-price">
+                                    <p class="price-label">From</p>
+                                    <p class="price-amount">€165 <span>/ night</span></p>
+                                    <button class="book-direct-btn">Book Direct</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOTEL 5 -->
+                    <div class="hotel-card" data-vibe="romantic quiet" data-amenity="breakfast" data-transport="tram" onclick="window.location.href='hotel.html'">
+                        <div class="hotel-image" style="background-image: url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600');">
+                            <span class="hotel-badge">Verified</span>
+                        </div>
+                        <div class="hotel-info">
+                            <div class="hotel-top">
+                                <h3 class="hotel-name">Canal House West</h3>
+                                <p class="hotel-location">Nassaukade · Canal District West</p>
+                                <div class="hotel-tags">
+                                    <span class="hotel-tag">Historic</span>
+                                    <span class="hotel-tag">Canal View</span>
+                                    <span class="hotel-tag">Intimate</span>
+                                </div>
+                                <p class="verified-info">Parking: Permit zone — Hotel assists with booking</p>
+                            </div>
+                            <div class="hotel-bottom">
+                                <div class="hotel-rating">
+                                    <span class="rating-score">9.4</span>
+                                    <span class="rating-text">Outstanding</span>
+                                </div>
+                                <div class="hotel-price">
+                                    <p class="price-label">From</p>
+                                    <p class="price-amount">€210 <span>/ night</span></p>
+                                    <button class="book-direct-btn">Book Direct</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTER FUNCTIONALITY -->
+    <script>
+        const checkboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
+        const hotelCards = document.querySelectorAll('.hotel-card');
+        const clearBtn = document.querySelector('.clear-filters');
+
+        function filterHotels() {
+            const activeFilters = {
+                vibe: [],
+                amenity: [],
+                transport: []
+            };
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const filterType = checkbox.dataset.filter;
+                    activeFilters[filterType].push(checkbox.value);
+                }
+            });
+
+            const hasActiveFilters = Object.values(activeFilters).some(arr => arr.length > 0);
+
+            hotelCards.forEach(card => {
+                if (!hasActiveFilters) {
+                    card.style.display = 'grid';
+                    return;
+                }
+
+                let showCard = true;
+
+                for (const [filterType, values] of Object.entries(activeFilters)) {
+                    if (values.length > 0) {
+                        const cardData = card.dataset[filterType] || '';
+                        const hasMatch = values.some(val => cardData.includes(val));
+                        if (!hasMatch) {
+                            showCard = false;
+                            break;
+                        }
+                    }
+                }
+
+                card.style.display = showCard ? 'grid' : 'none';
+            });
+
+            // Update results count
+            const visibleCount = document.querySelectorAll('.hotel-card[style="display: grid"], .hotel-card:not([style])').length;
+            document.querySelector('.results-count').textContent = `${visibleCount} verified properties found`;
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterHotels);
+        });
+
+        clearBtn.addEventListener('click', () => {
+            checkboxes.forEach(checkbox => checkbox.checked = false);
+            filterHotels();
+        });
+    </script>
+
+</body>
+</html>

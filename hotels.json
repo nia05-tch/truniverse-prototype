@@ -1,0 +1,392 @@
+{
+  "hotels": [
+    {
+      "id": "hotel-001",
+      "name": "Hotel & Eatery West",
+      "slug": "hotel-eatery-west",
+      "location": {
+        "address": "Baarsjesweg 24",
+        "neighborhood": "Amsterdam West",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "latitude": 52.3676,
+        "longitude": 4.8520
+      },
+      "images": {
+        "main": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600",
+        "gallery": [
+          "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
+          "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800"
+        ]
+      },
+      "rating": {
+        "score": 9.2,
+        "label": "Exceptional",
+        "reviews_count": 342
+      },
+      "price": {
+        "from": 145,
+        "currency": "EUR",
+        "per": "night"
+      },
+      "vibe_tags": ["creative", "romantic"],
+      "amenity_tags": ["breakfast", "workspace"],
+      "transport_tags": ["tram"],
+      "display_tags": ["Creative Hub", "Workspace", "Local Vibe"],
+      "verified_info": {
+        "parking": {
+          "available": true,
+          "type": "street",
+          "on_site": false,
+          "distance_m": 50,
+          "cost_per_hour": 4.00,
+          "cost_per_day": null,
+          "notes": "Street parking only"
+        },
+        "breakfast": {
+          "available": true,
+          "included": false,
+          "cost": 18,
+          "type": "Full breakfast"
+        },
+        "wifi": {
+          "available": true,
+          "free": true,
+          "speed": "Fast (100+ Mbps)"
+        },
+        "check_in": "15:00",
+        "check_out": "11:00"
+      },
+      "description": {
+        "short": "A creative hub in the heart of Amsterdam West, perfect for digital nomads and design lovers.",
+        "long": "Hotel & Eatery West combines industrial-chic design with warm hospitality. The ground-floor restaurant serves locally-sourced meals, while upstairs rooms feature curated art and dedicated workspaces. Located steps from the trendy Baarsjes neighborhood, you're surrounded by independent coffee shops, vintage stores, and authentic local life."
+      },
+      "best_for": ["Digital nomads", "Couples", "Design enthusiasts"],
+      "direct_booking_url": "https://hotelandeaterywest.com/book",
+      "verified": true,
+      "last_verified": "2026-03-20"
+    },
+    {
+      "id": "hotel-002",
+      "name": "The Westerpark Inn",
+      "slug": "westerpark-inn",
+      "location": {
+        "address": "Haarlemmerweg 88",
+        "neighborhood": "Near Westerpark",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "latitude": 52.3864,
+        "longitude": 4.8765
+      },
+      "images": {
+        "main": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600",
+        "gallery": [
+          "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
+          "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800",
+          "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+        ]
+      },
+      "rating": {
+        "score": 9.5,
+        "label": "Outstanding",
+        "reviews_count": 218
+      },
+      "price": {
+        "from": 189,
+        "currency": "EUR",
+        "per": "night"
+      },
+      "vibe_tags": ["quiet", "romantic"],
+      "amenity_tags": ["parking", "breakfast"],
+      "transport_tags": ["tram", "metro"],
+      "display_tags": ["Quiet Retreat", "Garden View", "Romantic"],
+      "verified_info": {
+        "parking": {
+          "available": true,
+          "type": "private",
+          "on_site": true,
+          "distance_m": 0,
+          "cost_per_hour": null,
+          "cost_per_day": 25.00,
+          "notes": "Private garage, reservation recommended"
+        },
+        "breakfast": {
+          "available": true,
+          "included": true,
+          "cost": 0,
+          "type": "Organic buffet"
+        },
+        "wifi": {
+          "available": true,
+          "free": true,
+          "speed": "Fast (100+ Mbps)"
+        },
+        "check_in": "14:00",
+        "check_out": "12:00"
+      },
+      "description": {
+        "short": "A peaceful oasis overlooking Westerpark, where nature meets boutique luxury.",
+        "long": "The Westerpark Inn offers a rare combination: boutique elegance with direct access to Amsterdam's beloved Westerpark. Wake up to garden views, enjoy organic breakfast in our greenhouse restaurant, and step directly into 50 hectares of parkland. The nearby Westergasfabriek hosts cultural events, markets, and excellent restaurants. Perfect for those seeking tranquility without sacrificing connectivity."
+      },
+      "best_for": ["Couples", "Nature lovers", "Relaxation seekers"],
+      "direct_booking_url": "https://westerparkinn.nl/reservations",
+      "verified": true,
+      "last_verified": "2026-03-18"
+    },
+    {
+      "id": "hotel-003",
+      "name": "Casa Amsterdam",
+      "slug": "casa-amsterdam",
+      "location": {
+        "address": "De Clercqstraat 56",
+        "neighborhood": "Oud-West",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "latitude": 52.3731,
+        "longitude": 4.8673
+      },
+      "images": {
+        "main": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600",
+        "gallery": [
+          "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
+          "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
+          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800"
+        ]
+      },
+      "rating": {
+        "score": 8.8,
+        "label": "Excellent",
+        "reviews_count": 456
+      },
+      "price": {
+        "from": 128,
+        "currency": "EUR",
+        "per": "night"
+      },
+      "vibe_tags": ["family"],
+      "amenity_tags": ["parking", "breakfast", "pets"],
+      "transport_tags": ["tram"],
+      "display_tags": ["Family Suites", "Pet-Friendly", "Breakfast"],
+      "verified_info": {
+        "parking": {
+          "available": true,
+          "type": "public",
+          "on_site": false,
+          "distance_m": 180,
+          "cost_per_hour": 3.50,
+          "cost_per_day": 35.00,
+          "notes": "Public lot Q-Park De Clercqstraat, 3 min walk"
+        },
+        "breakfast": {
+          "available": true,
+          "included": true,
+          "cost": 0,
+          "type": "Family-style buffet"
+        },
+        "wifi": {
+          "available": true,
+          "free": true,
+          "speed": "Standard (50 Mbps)"
+        },
+        "check_in": "15:00",
+        "check_out": "11:00"
+      },
+      "description": {
+        "short": "A warm, family-run hotel where kids and pets are genuinely welcome.",
+        "long": "Casa Amsterdam breaks the mold of 'adults-only' boutique hotels. Our family suites feature separate sleeping areas, kid-friendly amenities, and a relaxed atmosphere where children can be children. The on-site restaurant offers a dedicated kids menu with healthy options, and our staff genuinely loves helping families explore Amsterdam. Dogs are welcome too — we provide beds, bowls, and local walking route maps."
+      },
+      "best_for": ["Families with children", "Pet owners", "Multi-generational trips"],
+      "family_friendly": {
+        "score": 9,
+        "family_rooms": true,
+        "cribs_available": true,
+        "kids_menu": true,
+        "babysitting": true,
+        "play_area": false
+      },
+      "pet_policy": {
+        "allowed": true,
+        "fee_per_night": 15,
+        "max_weight_kg": 25,
+        "notes": "Dogs welcome, cats by request"
+      },
+      "direct_booking_url": "https://casa-amsterdam.com/book",
+      "verified": true,
+      "last_verified": "2026-03-22"
+    },
+    {
+      "id": "hotel-004",
+      "name": "The Loft Studios",
+      "slug": "loft-studios",
+      "location": {
+        "address": "Bilderdijkstraat 132",
+        "neighborhood": "Amsterdam West",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "latitude": 52.3698,
+        "longitude": 4.8612
+      },
+      "images": {
+        "main": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600",
+        "gallery": [
+          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
+          "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
+          "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800"
+        ]
+      },
+      "rating": {
+        "score": 9.0,
+        "label": "Superb",
+        "reviews_count": 189
+      },
+      "price": {
+        "from": 165,
+        "currency": "EUR",
+        "per": "night"
+      },
+      "vibe_tags": ["creative"],
+      "amenity_tags": ["workspace", "breakfast"],
+      "transport_tags": ["metro"],
+      "display_tags": ["Design Hotel", "Coworking", "Rooftop Bar"],
+      "verified_info": {
+        "parking": {
+          "available": false,
+          "type": null,
+          "on_site": false,
+          "distance_m": null,
+          "cost_per_hour": null,
+          "cost_per_day": null,
+          "notes": "No on-site parking. P+R Sloterdijk recommended (€8/day + free metro)"
+        },
+        "breakfast": {
+          "available": true,
+          "included": false,
+          "cost": 22,
+          "type": "À la carte"
+        },
+        "wifi": {
+          "available": true,
+          "free": true,
+          "speed": "Ultra-fast (300+ Mbps)"
+        },
+        "check_in": "16:00",
+        "check_out": "11:00"
+      },
+      "description": {
+        "short": "Industrial-chic studios with a rooftop bar and serious coworking space.",
+        "long": "The Loft Studios is where design meets productivity. Each loft-style room features high ceilings, exposed brick, and a dedicated work area with ergonomic seating. The ground-floor coworking space is free for guests and includes meeting rooms bookable by the hour. End your day at the rooftop bar with panoramic views over Amsterdam West. A favorite among architects, designers, and creative entrepreneurs."
+      },
+      "best_for": ["Business travelers", "Creative professionals", "Solo travelers"],
+      "workspace_info": {
+        "in_room_desk": true,
+        "coworking_space": true,
+        "meeting_rooms": true,
+        "meeting_room_cost_per_hour": 30,
+        "printer_available": true
+      },
+      "direct_booking_url": "https://theloftstudios.nl/book",
+      "verified": true,
+      "last_verified": "2026-03-19"
+    },
+    {
+      "id": "hotel-005",
+      "name": "Canal House West",
+      "slug": "canal-house-west",
+      "location": {
+        "address": "Nassaukade 387",
+        "neighborhood": "Canal District West",
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "latitude": 52.3745,
+        "longitude": 4.8789
+      },
+      "images": {
+        "main": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600",
+        "gallery": [
+          "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800",
+          "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
+          "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
+        ]
+      },
+      "rating": {
+        "score": 9.4,
+        "label": "Outstanding",
+        "reviews_count": 276
+      },
+      "price": {
+        "from": 210,
+        "currency": "EUR",
+        "per": "night"
+      },
+      "vibe_tags": ["romantic", "quiet"],
+      "amenity_tags": ["breakfast"],
+      "transport_tags": ["tram"],
+      "display_tags": ["Historic", "Canal View", "Intimate"],
+      "verified_info": {
+        "parking": {
+          "available": true,
+          "type": "permit",
+          "on_site": false,
+          "distance_m": 100,
+          "cost_per_hour": null,
+          "cost_per_day": 45.00,
+          "notes": "Permit zone. Hotel assists with booking visitor permit (€45/day)"
+        },
+        "breakfast": {
+          "available": true,
+          "included": true,
+          "cost": 0,
+          "type": "Champagne breakfast"
+        },
+        "wifi": {
+          "available": true,
+          "free": true,
+          "speed": "Fast (100+ Mbps)"
+        },
+        "check_in": "15:00",
+        "check_out": "12:00"
+      },
+      "description": {
+        "short": "A restored 17th-century canal house offering timeless Amsterdam romance.",
+        "long": "Canal House West occupies a meticulously restored monument from 1658. Original features — steep staircases, ornate ceiling plasterwork, canal-facing windows — blend with modern comforts. Each of our 12 rooms is unique, named after historical figures who shaped this neighborhood. Breakfast is served in the candlelit parlor overlooking the water. An intimate, unforgettable Amsterdam experience."
+      },
+      "best_for": ["Couples", "Anniversary trips", "History enthusiasts"],
+      "special_features": [
+        "17th-century monument",
+        "Original period features",
+        "Only 12 rooms",
+        "Canal-facing rooms available"
+      ],
+      "direct_booking_url": "https://canalhousewest.com/reservations",
+      "verified": true,
+      "last_verified": "2026-03-21"
+    }
+  ],
+  "filters": {
+    "vibe": [
+      {"value": "romantic", "label": "Romantic"},
+      {"value": "creative", "label": "Creative & Artsy"},
+      {"value": "quiet", "label": "Quiet Retreat"},
+      {"value": "family", "label": "Family-Friendly"}
+    ],
+    "amenities": [
+      {"value": "parking", "label": "Parking"},
+      {"value": "breakfast", "label": "Breakfast Included"},
+      {"value": "workspace", "label": "Workspace"},
+      {"value": "pets", "label": "Pet-Friendly"}
+    ],
+    "transport": [
+      {"value": "tram", "label": "Near Tram (< 5 min)"},
+      {"value": "metro", "label": "Near Metro"}
+    ]
+  },
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-03-25",
+    "total_hotels": 5,
+    "city": "Amsterdam",
+    "area": "West",
+    "notes": "Prototype data for Truniverse MVP pilot. Replace with real hotel data for production."
+  }
+}

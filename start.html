@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truniverse — The Hotel Intelligence Layer</title>
+
+    <!-- ULTRA LUXURY FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            background: #080810;
+            color: #f8f9fa;
+            overflow-x: hidden;
+        }
+
+        /* =============================================
+           SPACE BACKGROUND
+           ============================================= */
+        .space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('pics/space.jpg') center center / cover no-repeat;
+            z-index: 0;
+            animation: slowZoom 30s ease-out forwards;
+        }
+
+        @keyframes slowZoom {
+            0% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .space-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(8, 8, 16, 0.5) 50%, rgba(8, 8, 16, 0.92) 100%);
+            z-index: 1;
+        }
+
+        /* =============================================
+           PLANETS
+           ============================================= */
+        .planet {
+            position: fixed;
+            border-radius: 50%;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .earth {
+            width: 320px;
+            height: 320px;
+            bottom: -80px;
+            right: -60px;
+            background: url('pics/earth.jpg') center center / cover no-repeat;
+            animation: earthMove 5s ease-out forwards, planetFloat 15s ease-in-out 5s infinite;
+            box-shadow: 0 0 80px rgba(100, 180, 255, 0.3), inset -20px -20px 60px rgba(0,0,0,0.5);
+        }
+
+        @keyframes earthMove {
+            0% { transform: translate(100px, 100px) scale(1.5); opacity: 0; }
+            30% { opacity: 0.9; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+        }
+
+        .pink-planet1 {
+            width: 140px;
+            height: 140px;
+            top: 40%;
+            left: 3%;
+            background: url('pics/pink_planet1.jpg') center center / cover no-repeat;
+            animation: planet1Move 5s ease-out forwards, planetFloat 12s ease-in-out 5s infinite;
+            box-shadow: 0 0 50px rgba(200, 100, 255, 0.4);
+        }
+
+        @keyframes planet1Move {
+            0% { transform: translate(-100px, 50px) scale(1.5); opacity: 0; }
+            30% { opacity: 0.8; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+        }
+
+        .pink-planet2 {
+            width: 90px;
+            height: 90px;
+            top: 15%;
+            right: 8%;
+            background: url('pics/pink_planet2.jpg') center center / cover no-repeat;
+            animation: planet2Move 5s ease-out forwards, planetFloat 14s ease-in-out 5s infinite;
+            box-shadow: 0 0 40px rgba(200, 100, 255, 0.3);
+        }
+
+        @keyframes planet2Move {
+            0% { transform: translate(80px, -80px) scale(1.3); opacity: 0; }
+            30% { opacity: 0.75; }
+            100% { transform: translate(0, 0) scale(1); opacity: 0.75; }
+        }
+
+        @keyframes planetFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* =============================================
+           TWINKLING STARS
+           ============================================= */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffe8a3;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .hotel-star {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: #f4a261;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #ffe8a3, 0 0 40px #f4a261;
+            z-index: 4;
+            animation: hotelStarFloat 8s infinite ease-in-out;
+        }
+
+        @keyframes hotelStarFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+            50% { transform: translateY(-25px) scale(1.2); opacity: 1; }
+        }
+
+        /* =============================================
+           MAIN CONTENT
+           ============================================= */
+        .main-content {
+            position: relative;
+            z-index: 50;
+            opacity: 0;
+            animation: mainFadeIn 2s ease-out 0.5s forwards;
+        }
+
+        @keyframes mainFadeIn {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =============================================
+           HERO SECTION
+           ============================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 25px;
+            text-align: center;
+        }
+
+        /* LOGO WITH DIAMOND */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .logo-diamond {
+            width: 35px;
+            height: 35px;
+            filter: drop-shadow(0 0 15px rgba(255, 232, 163, 0.6));
+            animation: diamondGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes diamondGlow {
+            0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 232, 163, 0.6)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 25px rgba(255, 232, 163, 0.9)); transform: scale(1.05); }
+        }
+
+        .logo-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            color: #f4a261;
+            text-shadow: 0 0 30px rgba(244, 162, 97, 0.4);
+        }
+
+        /* HERO HEADLINE */
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.2rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            letter-spacing: 2px;
+        }
+
+        h1 em {
+            font-style: italic;
+            color: #f4a261;
+        }
+
+        .headline-second {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            color: #f4a261;
+            font-style: italic;
+        }
+
+        .sub-headline {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            opacity: 0.6;
+            margin-bottom: 55px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        .sub-headline strong {
+            color: #f4a261;
+            font-weight: 400;
+            opacity: 1;
+        }
+
+        /* SEARCH BOX */
+        .search-box {
+            background: rgba(28, 28, 52, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 45px;
+            margin-bottom: 45px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(244, 162, 97, 0.15);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .brain-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #f4a261;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 24px 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            font-weight: 400;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            background: rgba(10, 10, 18, 0.8);
+            color: #f8f9fa;
+            outline: none;
+            transition: all 0.4s ease;
+        }
+
+        .search-input::placeholder {
+            color: rgba(248, 249, 250, 0.4);
+        }
+
+        .search-input:focus {
+            border-color: #f4a261;
+            box-shadow: 0 0 40px rgba(244, 162, 97, 0.2);
+        }
+
+        .search-button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 22px 35px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #f4a261 0%, #e07a5f 100%);
+            color: #080810;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .search-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(244, 162, 97, 0.4);
+            letter-spacing: 7px;
+        }
+
+        /* =============================================
+           MANIFESTO SECTION
+           ============================================= */
+        .manifesto {
+            padding: 100px 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #f4a261;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .manifesto-block {
+            background: rgba(28, 28, 52, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(244, 162, 97, 0.1);
+        }
+
+        .manifesto-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #f4a261;
+            margin-bottom: 20px;
+        }
+
+        .manifesto-block h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .manifesto-block p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        .manifesto-block em {
+            color: #f4a261;
+            font-style: normal;
+            opacity: 1;
+        }
+
+        /* SOLUTION FEATURES */
+        .solution-features {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .solution-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .solution-icon {
+            font-size: 1.2rem;
+            color: #f4a261;
+            margin-top: 3px;
+        }
+
+        .solution-item h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #f4a261;
+            margin-bottom: 8px;
+        }
+
+        .solution-item p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.65;
+            margin: 0;
+        }
+
+        /* =============================================
+           THREE PILLARS
+           ============================================= */
+        .pillars {
+            padding: 80px 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pillar {
+            background: rgba(28, 28, 52, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 45px 35px;
+            border: 1px solid rgba(244, 162, 97, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .pillar:hover {
+            transform: translateY(-10px);
+            border-color: rgba(244, 162, 97, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .pillar h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #f4a261;
+            margin-bottom: 20px;
+        }
+
+        .pillar p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.6;
+            font-weight: 300;
+        }
+
+        /* =============================================
+           FOOTER
+           ============================================= */
+        footer {
+            padding: 80px 25px 50px;
+            text-align: center;
+            border-top: 1px solid rgba(244, 162, 97, 0.1);
+        }
+
+        .footer-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            opacity: 0.5;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            opacity: 1;
+            color: #f4a261;
+        }
+
+        .feature-icon {
+            color: #f4a261;
+            margin-right: 10px;
+        }
+
+        /* =============================================
+           RESPONSIVE
+           ============================================= */
+        @media (max-width: 900px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .headline-second { font-size: 2.2rem; }
+            .earth { width: 180px; height: 180px; }
+            .pink-planet1 { width: 100px; height: 100px; }
+            .pink-planet2 { width: 70px; height: 70px; }
+            .search-box { padding: 30px 25px; }
+            .manifesto-block { padding: 35px 25px; }
+            .features { gap: 20px; }
+            .logo-diamond { width: 28px; height: 28px; }
+            .logo-text { letter-spacing: 8px; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SPACE BACKGROUND -->
+    <div class="space-bg"></div>
+    <div class="space-overlay"></div>
+
+    <!-- PLANETS -->
+    <div class="planet earth"></div>
+    <div class="planet pink-planet1"></div>
+    <div class="planet pink-planet2"></div>
+
+    <!-- TWINKLING STARS -->
+    <div class="stars-container" id="stars"></div>
+
+    <!-- HOTEL STARS -->
+    <div class="hotel-star" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
+    <div class="hotel-star" style="top: 35%; right: 12%; animation-delay: 1.5s;"></div>
+    <div class="hotel-star" style="top: 65%; left: 8%; animation-delay: 3s;"></div>
+    <div class="hotel-star" style="top: 75%; right: 18%; animation-delay: 0.8s;"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- =============================================
+             HERO SECTION
+             ============================================= -->
+        <section class="hero">
+            
+            <!-- LOGO WITH DIAMOND -->
+            <div class="logo">
+                <img src="pics/diamond.jpg" alt="Diamond" class="logo-diamond">
+                <span class="logo-text">Truniverse</span>
+            </div>
+
+            <h1>Search at the speed of <em>thought.</em></h1>
+            <p class="headline-second">Book at the speed of trust.</p>
+
+            <p class="sub-headline">
+                The world's first <strong>AI-Knowledge Layer</strong> for hotels. No manipulation. No middleman. Just the honest truth, delivered directly from the source.
+            </p>
+
+            <div class="search-box">
+                <p class="brain-label">✦ The Brain</p>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Find me a sun-drenched boutique in Amsterdam West, family-friendly, with a workspace and a 5-minute walk to the tram..."
+                >
+                <button class="search-button" onclick="window.location.href='search.html'">
+                    Activate Discovery
+                </button>
+            </div>
+
+        </section>
+
+        <!-- =============================================
+             MANIFESTO SECTION
+             ============================================= -->
+        <section class="manifesto">
+            
+            <p class="section-title">✦ Why We Exist</p>
+
+            <!-- THE PROBLEM -->
+            <div class="manifesto-block">
+                <p class="manifesto-label">The Problem</p>
+                <h3>OTAs don't help you find a hotel.<br>They help you find a <em>commission.</em></h3>
+                <p>
+                    Booking.com and Expedia built rigid filters, biased rankings, and "non-refundable" traps everywhere. Their algorithms serve their profits — not your perfect stay.
+                </p>
+            </div>
+
+            <!-- THE SOLUTION -->
+            <div class="manifesto-block">
+                <p class="manifesto-label">The Solution</p>
+                <h3>We built the <em>Wikipedia of Hotels.</em></h3>
+                <p>
+                    Our AI doesn't just scan lists — it understands neighborhoods, reads the fine print about parking, and knows the soul of a boutique property.
+                </p>
+
+                <div class="solution-features">
+                    <div class="solution-item">
+                        <span class="solution-icon">◈</span>
+                        <div>
+                            <h4>Human-Centric</h4>
+                            <p>Search using natural language, not check-boxes.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <span class="solution-icon">◈</span>
+                        <div>
+                            <h4>Radically Transparent</h4>
+                            <p>If the parking is public and paid, we tell you — before you book.</p>
+                        </div>
+                    </div>
+                    <div class="solution-item">
+                        <span class="solution-icon">◈</span>
+                        <div>
+                            <h4>Direct-First</h4>
+                            <p>We aren't a booking engine. We are a bridge. One click takes you straight to the hotel's official site.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =============================================
+             THREE PILLARS
+             ============================================= -->
+        <section class="pillars">
+            
+            <p class="section-title">✦ The Three Pillars</p>
+
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <div class="pillar-icon">🏛</div>
+                    <h3>Structured Truth</h3>
+                    <p>Every hotel is mapped with 50+ "Intelligence Tags" — Vibe, Transport, Real Amenities. No guesswork.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🧠</div>
+                    <h3>AI Concierge</h3>
+                    <p>Our brain answers questions OTAs can't: "Is it actually quiet on Fridays?" "Can I walk to dinner?"</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">⚡</div>
+                    <h3>The Direct Engine</h3>
+                    <p>Zero commissions. 100% of your money goes to the hotel. Better service for you.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- =============================================
+             FOOTER
+             ============================================= -->
+        <footer>
+            <p class="footer-tagline">Built for the Discerning Traveler. Powered by Open Intelligence.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">◈</span>Direct Booking
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">◈</span>Verified Information
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">◈</span>No Commissions
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- GENERATE STARS -->
+    <script>
+        const starsContainer = document.getElementById('stars');
+        
+        for (let i = 0; i < 120; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            
+            const size = Math.random() * 2.5 + 0.5;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            
+            if (size > 2) {
+                star.style.boxShadow = '0 0 ' + (size * 3) + 'px #ffe8a3';
+            }
+            
+            star.style.animationDelay = (Math.random() * 5) + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+
+</body>
+</html>
