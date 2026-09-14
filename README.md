@@ -1,5 +1,3 @@
-# truniverse-prototype
-Truniverse hotel discovery prototype
 # Truniverse — AI Hotel Discovery Prototype
 
 Truniverse is a frontend prototype exploring how structured, transparent, and AI-readable hotel data can improve hotel discovery.
