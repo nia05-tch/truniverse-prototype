@@ -66,5 +66,6 @@ The schema is designed to support future natural-language search and AI-based ho
 * Production deployment
 
 **Author:** Nia Racheva
+
 **Status:** Prototype / Proof of Concept
 
